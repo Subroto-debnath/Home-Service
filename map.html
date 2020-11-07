@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Location</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/search.css">
+    <link rel="stylesheet" href="css/customSelect.css">
+    <link rel="stylesheet" href="css/profileCard.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+      * element that contains the map. */
+      #map {
+        height: 100%;
+        position: absolute; 
+        top: 0; 
+        bottom: -200px; 
+        left: 0; 
+        right: 0; 
+        z-index: 0;
+    }
+  }
+
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+</style>
+</head>
+<body>
+<div id="map"></div>
+<script src="firebaseMap.js"></script>
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvt-QMTth4ItaYx_BcAcUdlEh7UvVcX6M&libraries=visualization&callback=initMap">
+</script>
+
+<div class="wrap">
+   <div class="search">
+    <div class="custom-select">
+    <select id="optionSelect" >
+                <option >Category</option>
+                <option id="Electrician">Electrician</option>
+                <option id="Plumber">Plumber</option>
+                <option id="Cleaner">Cleaner</option>
+    </select>
+    <script src="customSelect.js"></script>
+    </div>
+      <input type="text" class="searchTerm" placeholder="Search for you location">
+      <button type="submit" class="searchButton" onclick="searchingVendor()"><i class="fa fa-search"></i></button>
+   </div>
+   </div>
+   <div class="card" id="profileCard" style="display:none">
+  <img src="images/ami.png" style="width:100%">
+  <h1 class="title" id="vendorName"></h1>
+  <h2 id="vendorType"></h2>
+  <p> <a><i class="fa fa-globe" aria-hidden="true"> </i> </a> Knows <b><i>English</i></b> & <b> <i>French</i></b></p>
+
+  <a><i class="fa fa-star" aria-hidden="true"></i></a>
+  <p id="rating"></p>
+  <a><i class="fa fa-briefcase" aria-hidden="true"></i></a>
+  <p id="workingExperience"></p>
+  <p><button>Hire</button></p>
+</div>
+
+
+</body>
+</html>
